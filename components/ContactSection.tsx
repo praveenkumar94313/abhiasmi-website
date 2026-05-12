@@ -129,7 +129,7 @@ export default function ContactSection() {
                     className="w-full px-4 py-3 bg-cream-100 border border-gold-300/30 font-sans text-sm
                                text-charcoal-800 focus:outline-none focus:border-gold-500 transition-colors duration-200"
                   >
-                    {["Bath Mats", "Rugs", "Throws", "Curtains", "Full Catalogue", "Custom / OEM"].map(o => (
+                    {["Bath Mats", "Rugs", "Throws", "Curtains", "Cushions", "Full Catalogue", "Custom / OEM"].map(o => (
                       <option key={o}>{o}</option>
                     ))}
                   </select>

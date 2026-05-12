@@ -49,6 +49,17 @@ const products = [
     accent:   "from-[#2C3E50] to-[#4A6FA5]",
     tag:      "Custom",
   },
+  {
+    id:       "cushions",
+    title:    "Cushions",
+    subtitle: "Comfort, Elevated",
+    material: "100% Cotton & Velvet",
+    weave:    "Jacquard & Embroidered",
+    gsm:      "350 GSM",
+    image:    "https://images.unsplash.com/photo-1540638349517-3abd5afc5847?w=800&q=85",
+    accent:   "from-[#5C4033] to-[#8D6E63]",
+    tag:      "New",
+  },
 ];
 
 const cardVariants = {
@@ -173,11 +184,24 @@ export default function ProductCategories() {
           </p>
         </motion.div>
 
-        {/* Product grid — mobile 1col, tablet 2col, desktop 4col */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-          {products.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
+        {/* Product grid — mobile 1col, tablet 2col, desktop first-row 3col second-row 2col */}
+        {/* Row 1: 3 cards | Row 2: 2 cards centred via col-start offset */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-5">
+          {products.map((product, i) => {
+            // First 3 cards → span 2 each (fills 6 cols)
+            // Last 2 cards → span 3 each (fills 6 cols), centred
+            const spanClass =
+              i < 3
+                ? "lg:col-span-2"
+                : i === 3
+                ? "lg:col-span-3"
+                : "lg:col-span-3";
+            return (
+              <div key={product.id} className={`col-span-1 sm:col-span-1 ${spanClass}`}>
+                <ProductCard product={product} index={i} />
+              </div>
+            );
+          })}
         </div>
 
         {/* Browse all CTA */}

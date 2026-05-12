@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const footerLinks = {
-  Collections: ["Bath Mats", "Rugs & Dhurries", "Throws & Blankets", "Curtains & Drapes"],
+  Collections: ["Bath Mats", "Rugs & Dhurries", "Throws & Blankets", "Curtains & Drapes", "Cushions & Covers"],
   Company:     ["Our Heritage", "Craftsmanship", "Sustainability", "Certifications"],
   Exports:     ["Global Reach", "Wholesale Enquiry", "OEM / Private Label", "Download Catalogue"],
   Connect:     ["Contact Us", "WhatsApp", "LinkedIn", "Instagram"],
